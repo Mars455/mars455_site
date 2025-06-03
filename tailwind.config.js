@@ -4,6 +4,10 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
+      colors: {
+        // Add your custom color
+        'dark-background': '#1a2236',
+      },
       typography: {
         DEFAULT: {
           css: {

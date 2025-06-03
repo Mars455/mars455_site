@@ -5,8 +5,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Add your custom color
-        'dark-background': '#1a2236',
+        'dark-background': '#19191a',
       },
       typography: {
         DEFAULT: {

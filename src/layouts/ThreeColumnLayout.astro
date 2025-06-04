@@ -21,6 +21,15 @@ const { title, description, image, article, toc } = Astro.props;
 
 <BaseLayout title={title} description={description} image={image} article={article}>
   <div class="flex flex-col lg:flex-row min-h-screen">
+  <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+  <script>
+    kofiWidgetOverlay.draw('mars455', {
+      'type': 'floating-chat',
+      'floating-chat.donateButton.text': 'Support me',
+      'floating-chat.donateButton.background-color': '#323842',
+      'floating-chat.donateButton.text-color': '#fff'
+    });
+  </script>
     <!-- Mobile Navigation (shown only on small screens) -->
     <MobileNav />
 

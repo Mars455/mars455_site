@@ -28,32 +28,13 @@ function getTagUrl(skill) {
 const skillsData = [
   {
     category: "Programming Languages",
-    skills: ["Java", "SQL", "JavaScript", "Python"]
+    skills: ["C#", "Java"]
   },
   {
-    category: "Frameworks/Libraries",
-    skills: ["Spring Boot", "Spring Cloud", "MyBatis", "Hibernate", "React"]
+    category: "Other Skills",
+    skills: ["Novice Minecraft Modder", "Base Programming Skills", "IT Support", "Problem Solving"]
   },
-  {
-    category: "Databases",
-    skills: ["MySQL", "Oracle", "Redis", "MongoDB", "ElasticSearch"]
-  },
-  {
-    category: "Middleware",
-    skills: ["Kafka", "RabbitMQ", "Nginx", "Zuul", "Gateway"]
-  },
-  {
-    category: "Tools/Platforms",
-    skills: ["Docker", "Kubernetes", "Jenkins", "Git", "Maven", "Jira"]
-  },
-  {
-    category: "Architecture/Methodologies",
-    skills: ["Microservice Architecture", "Distributed Systems", "DDD Design", "Agile Development", "CI/CD"]
-  },
-  {
-    category: "Payment Domain",
-    skills: ["Payment Gateway", "Clearing & Settlement Systems", "Smart Routing", "Risk Control Systems", "Cross-border Payments", "Multi-currency Payments"]
-  }
+
 ];
 
 const siteConfig = getSiteConfig();
@@ -67,13 +48,13 @@ const socialConfig = getSocialConfig();
   
   <div class="prose dark:prose-invert prose-lg max-w-none">
     <p>
-      Welcome to my blog! This is my personal space where I share my thoughts, insights, and experiences in payment technology, system architecture, and software development.
+      Welcome to my blog! This is where I will show progress on my projects, and show my overall portfolio.
     </p>
     
     <h2>Personal Profile</h2>
     <p>
-      I'm Zhang Qingdong, a Senior Java Engineer and Team Leader with 9 years of experience in payment system development, specializing in cross-border payment solutions.
-      As a "Bridge Builder between Technology and Business," I combine deep fintech expertise with excellent engineering practices to create secure and reliable cross-border payment infrastructure.
+      I'm Mark Adams, a novice Minecraft modder who wants to branch into different spheres of development as I grow my skills.
+      This site will grow over time with more projects as I diversify my skills and learn!
     </p>
     
     <h2>Technical Skills</h2>
@@ -84,7 +65,7 @@ const socialConfig = getSocialConfig();
           {category.skills.map((skill, index) => (
             <>
               {hasMatchingTag(skill) ? (
-                <a href={getTagUrl(skill)} class="text-indigo-600 dark:text-indigo-400 hover:underline">{skill}</a>
+                <a href={getTagUrl(skill)} class="text-sky-600 dark:text-sky-400 hover:underline">{skill}</a>
               ) : (
                 <span>{skill}</span>
               )}

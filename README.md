@@ -1,4 +1,10 @@
-# Modern Personal Blog with Astro
+# My personal blog using Astro!
+
+### This is a work in progress and will be updated often.
+
+<sub> > Forked from https://github.com/copyboy/product_whoami </sub> 
+
+<!--# Modern Personal Blog with Astro
 
 A modern, fast, and feature-rich blog platform built with Astro, React, and Tailwind CSS.
 

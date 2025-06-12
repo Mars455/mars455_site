@@ -3,7 +3,7 @@
  * Convenient for accessing and using configuration items in the application
  */
 
-import siteConfig from 'src/components/config/site.json';
+import siteConfig from '../config/site.json';
 
 // Configuration type definition
 export interface SiteConfig {

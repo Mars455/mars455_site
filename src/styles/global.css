@@ -29,7 +29,7 @@
   }
 
   body {
-    @apply font-sans antialiased text-slate-900 dark:text-slate-50 bg-white dark:bg-slate-900;
+    @apply font-sans antialiased text-sky-900 dark:text-sky-50 bg-white dark:bg-sky-900;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 
@@ -72,7 +72,7 @@
 
   /* Links */
   a {
-    @apply text-indigo-600 dark:text-sky-400 hover:text-cyan-700 dark:hover:text-cyan-300 transition-colors;
+    @apply text-indigo-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-300 transition-colors;
   }
 
   /* Tags */
@@ -112,7 +112,7 @@
   }
 
   .prose code {
-    @apply px-1 py-0.5 rounded bg-sky-100 dark:bg-sky-800 text-sky-700 dark:text-sky-300;
+    @apply px-1 py-0.5 rounded bg-sky-100 dark:bg-neutral-800 text-sky-700 dark:text-sky-300;
   }
 
   .prose pre {

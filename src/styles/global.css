@@ -10,8 +10,8 @@
   
   /* Apply dark mode styles at the highest level to reduce FOUC */
   html.dark {
-    background-color: theme('colors.slate.800');
-    color: theme('colors.slate.50');
+    background-color: theme('colors.sky.800');
+    color: theme('colors.sky.50');
   }
   
   html.light {

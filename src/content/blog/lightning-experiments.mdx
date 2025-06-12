@@ -1,0 +1,79 @@
+---
+title: "Lightning Experiments"
+description: "This blog article is about my experiments setting up the lightning tools and armour"
+pubDate: 2025-06-12
+heroImage: "https://res.cloudinary.com/ddbybfkod/image/upload/v1710608940/blogs/Roman/minecraft-thunderstorm-survival/img2_gqz9yt.jpg"
+tags: ["minecraft", "mod", "elementalTools"]
+categories: ["programming"]
+location: "Hampshire, UK"
+---
+
+## My first challenge
+
+My first challenge in setting this all up, was figuring out how to actually strike lightning down on a location.
+Obviously, as all programmers know, the internet is your best friend.
+Trust me I used it a lot!
+Unfortunately there wasn't a lot of data available on this and I wasn't about to start decompiling mods to figure this out.
+Instead I tried around figuring out how to summon the LightningEntity.
+
+## The code
+
+I knew I needed to create an instance of the enitity, which I ran with the code:
+
+```
+Entity lightning = new
+```
+
+However this does not include any information that it requires, so I then added:
+
+```
+Entity lightning = new net.minecraft.entity.LightningEntity(EntityType.LIGHTNING_BOLT, (ServerWorld) world);
+```
+The LightningEntity requires the current world parsed through into it.
+
+## First use case
+
+The first way I used this was for the Shocking Apple item.
+
+As such, I needed to make sure this code ran on server only, and also struck down on the players location. I did this with this code below:
+
+```
+if (!world.isClient) {
+            BlockPos pos = user.getBlockPos();
+            Entity lightning = new net.minecraft.entity.LightningEntity(EntityType.LIGHTNING_BOLT, (ServerWorld) world);
+            lightning.refreshPositionAfterTeleport(pos.getX(), pos.getY(), pos.getZ());
+            ((ServerWorld) world).spawnEntity(lightning);
+        }
+```
+
+In total, the class looked like the below:
+
+```
+package dev.mars455.lightning;
+
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.server.world.ServerWorld;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+
+public class ShockingAppleItem extends Item {
+    public ShockingAppleItem(Settings settings) {
+        super(settings);
+    }
+
+    @Override
+    public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
+        if (!world.isClient) {
+            BlockPos pos = user.getBlockPos();
+            Entity lightning = new net.minecraft.entity.LightningEntity(EntityType.LIGHTNING_BOLT, (ServerWorld) world);
+            lightning.refreshPositionAfterTeleport(pos.getX(), pos.getY(), pos.getZ());
+            ((ServerWorld) world).spawnEntity(lightning);
+        }
+        return super.finishUsing(stack, world, user);
+    }
+```
+Hopefully this helps if anyone has similar questions, but this was some of the most fun I have had programming this mod so far!

@@ -5,7 +5,7 @@
 @layer base {
   /* Apply transition to HTML element for smoother theme switching */
   html {
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 1s ease, color 1s ease;
   }
   
   /* Apply dark mode styles at the highest level to reduce FOUC */

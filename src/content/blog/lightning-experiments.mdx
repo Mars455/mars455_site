@@ -8,15 +8,15 @@ categories: ["programming"]
 location: "Hampshire, UK"
 ---
 
-## My first challenge
+## My First Challenge
 
 My first challenge in setting this all up was figuring out how to actually strike lightning down on a location.
-Obviously, as all programmers know, the internet is your best friend.
-Trust me I used it a lot!
-Unfortunately there wasn't a lot of data available on this, and I wasn't about to start decompiling mods to figure this out.
-Instead I tried around figuring out how to summon the LightningEntity.
+As all programmers know, the internet is your best friend.
+Trust me, I used it a lot!
+Unfortunately, there wasn't a lot of data available on this, and I wasn't about to start decompiling mods to figure this out.
+Instead, I tried around figuring out how to summon the LightningEntity.
 
-## The code
+## The Code
 
 I knew I needed to create an instance of the entity, which I ran with the code:
 
@@ -24,14 +24,14 @@ I knew I needed to create an instance of the entity, which I ran with the code:
 Entity lightning = new
 ```
 
-However this does not include any information that it requires, so I then added:
+However, this does not include any information that it requires, so I then added:
 
 ```
 Entity lightning = new net.minecraft.entity.LightningEntity(EntityType.LIGHTNING_BOLT, (ServerWorld) world);
 ```
 The LightningEntity requires the current world parsed through into it.
 
-## First use case
+## First Use Case
 
 The first way I used this was for the Shocking Apple item.
 

@@ -47,7 +47,7 @@ export default function ThemeToggleIsland({ className = '', iconSize = 24 }: The
     <button
       type="button"
       onClick={toggleTheme}
-      className={`p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors ${className}`}
+      className={`p-2 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors ${className}`}
       aria-label="Toggle theme"
     >
       {/* Sun icon - Light mode */}
@@ -85,7 +85,7 @@ export default function ThemeToggleIsland({ className = '', iconSize = 24 }: The
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className={`w-5 h-5 text-slate-700 ${theme === 'light' ? 'block' : 'hidden'}`}
+        className={`w-5 h-5 text-neutral-700 ${theme === 'light' ? 'block' : 'hidden'}`}
       >
         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
       </svg>

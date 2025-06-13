@@ -36,18 +36,18 @@ const SearchResultCard = React.memo(({ post, formatDate }: {
   formatDate: (dateString: string) => string;
 }) => {
   return (
-    <article className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col h-full">
+    <article className="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col h-full">
       <div className="p-5 flex flex-col flex-grow">
         {/* Title area */}
         <div className="mb-3">
-          <h2 className="text-lg font-bold text-slate-900 dark:text-white hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors line-clamp-2">
+          <h2 className="text-lg font-bold text-neutral-900 dark:text-white hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors line-clamp-2">
             <a href={`/blog/${post.slug}`}>{post.title}</a>
           </h2>
         </div>
         
         {/* Description area */}
         <div className="mb-4 flex-grow">
-          <p className="text-slate-600 dark:text-slate-300 text-sm line-clamp-3">
+          <p className="text-neutral-600 dark:text-neutral-300 text-sm line-clamp-3">
             {post.description}
           </p>
         </div>
@@ -59,13 +59,13 @@ const SearchResultCard = React.memo(({ post, formatDate }: {
               <a
                 key={tag}
                 href={`/tags/${tag.toLowerCase().replace(/\s+/g, '-')}`}
-                className="text-xs px-2 py-0.5 bg-slate-100 dark:bg-slate-700 rounded-full hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors"
+                className="text-xs px-2 py-0.5 bg-neutral-100 dark:bg-neutral-700 rounded-full hover:bg-neutral-200 dark:hover:bg-neutral-600 transition-colors"
               >
                 {tag}
               </a>
             ))}
             {post.tags && post.tags.length > 3 && 
-              <span className="text-xs px-2 py-0.5 bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 rounded-full">
+              <span className="text-xs px-2 py-0.5 bg-neutral-50 dark:bg-neutral-800 text-neutral-500 dark:text-neutral-400 rounded-full">
                 +{post.tags.length - 3}
               </span>
             }
@@ -73,12 +73,12 @@ const SearchResultCard = React.memo(({ post, formatDate }: {
         </div>
         
         {/* Author and date area */}
-        <div className="mt-auto pt-2 border-t border-slate-100 dark:border-slate-700">
+        <div className="mt-auto pt-2 border-t border-neutral-100 dark:border-neutral-700">
           <div className="flex items-center justify-between">
-            <span className="text-xs text-slate-500 dark:text-slate-400 truncate max-w-[50%]">
+            <span className="text-xs text-neutral-500 dark:text-neutral-400 truncate max-w-[50%]">
               By {post.author || 'Anonymous'}
             </span>
-            <time dateTime={post.pubDate} className="text-xs text-slate-500 dark:text-slate-400">
+            <time dateTime={post.pubDate} className="text-xs text-neutral-500 dark:text-neutral-400">
               {formatDate(post.pubDate)}
             </time>
           </div>
@@ -93,7 +93,7 @@ const TagButton = React.memo(({ tag, onClick }: { tag: string; onClick: (tag: st
   return (
     <button
       onClick={() => onClick(tag)}
-      className="text-xs px-3 py-1 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-full transition-colors"
+      className="text-xs px-3 py-1 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 rounded-full transition-colors"
     >
       {tag}
     </button>
@@ -324,11 +324,11 @@ const SearchIsland = ({
             type="text" 
             id="search-input" 
             placeholder="Search articles, tags or categories..." 
-            className="w-full p-4 pr-12 border border-slate-300 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+            className="w-full p-4 pr-12 border border-neutral-300 dark:border-neutral-700 rounded-lg bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-cyan-500"
             value={searchQuery}
             onChange={handleSearchInput}
           />
-          <div className="absolute right-4 top-4 text-slate-400">
+          <div className="absolute right-4 top-4 text-neutral-400">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
@@ -341,8 +341,8 @@ const SearchIsland = ({
       
       {/* Search status */}
       {searchQuery && (
-        <div className="mb-6 text-center py-3 px-4 bg-slate-100 dark:bg-slate-800 rounded-lg">
-          <p className="text-slate-600 dark:text-slate-300">
+        <div className="mb-6 text-center py-3 px-4 bg-neutral-100 dark:bg-neutral-800 rounded-lg">
+          <p className="text-neutral-600 dark:text-neutral-300">
             <span>{searchResults.length}</span> results matching "<span>{searchQuery}</span>"
           </p>
         </div>
@@ -351,7 +351,7 @@ const SearchIsland = ({
       {/* Loading state */}
       {isLoading && (
         <div className="text-center py-8">
-          <p className="text-slate-600 dark:text-slate-300">Loading...</p>
+          <p className="text-neutral-600 dark:text-neutral-300">Loading...</p>
         </div>
       )}
       
@@ -361,8 +361,8 @@ const SearchIsland = ({
       {/* No results state */}
       {searchQuery && searchResults.length === 0 && !isLoading && isInitialized && (
         <div className="text-center py-12">
-          <p className="text-xl text-slate-600 dark:text-slate-300">No matching articles found.</p>
-          <p className="mt-2 text-slate-500 dark:text-slate-400">
+          <p className="text-xl text-neutral-600 dark:text-neutral-300">No matching articles found.</p>
+          <p className="mt-2 text-neutral-500 dark:text-neutral-400">
             Try different keywords or
             <button onClick={resetSearch} className="text-cyan-600 dark:text-cyan-400 hover:underline ml-1">
               view all articles

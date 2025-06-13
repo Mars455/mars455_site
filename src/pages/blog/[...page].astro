@@ -54,13 +54,13 @@ const sortedTags = Object.entries(tags)
           class="text-sm px-3 py-1 bg-sky-100 dark:bg-sky-800 hover:bg-sky-200 dark:hover:bg-sky-700 rounded-full transition-colors"
         >
           {tag}
-          <span class="ml-1 text-slate-500 dark:text-slate-400">({count})</span>
+          <span class="ml-1 text-neutral-500 dark:text-neutral-400">({count})</span>
         </a>
       ))}
     </div>
   </div>
 
-  <div class="divide-y divide-slate-200 dark:divide-slate-700">
+  <div class="divide-y divide-neutral-200 dark:divide-neutral-700">
     {posts.map(post => (
       <ArticleListItem
         title={post.data.title}
@@ -79,7 +79,7 @@ const sortedTags = Object.entries(tags)
       {currentPage > 1 && (
         <a
           href={`/blog${currentPage > 2 ? '/' + (currentPage - 1) : ''}`}
-          class="px-3 py-2 rounded-l-md border border-r-0 border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700"
+          class="px-3 py-2 rounded-l-md border border-r-0 border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-800 text-neutral-500 dark:text-neutral-400 hover:bg-neutral-50 dark:hover:bg-neutral-700"
         >
           Previous
         </a>
@@ -88,10 +88,10 @@ const sortedTags = Object.entries(tags)
         <a
           href={`/blog${page > 1 ? '/' + page : ''}`}
           class:list={[
-            'px-3 py-2 border border-slate-300 dark:border-slate-600',
+            'px-3 py-2 border border-neutral-300 dark:border-neutral-600',
             page === currentPage
               ? 'bg-cyan-600 text-white font-medium hover:bg-cyan-700'
-              : 'bg-white dark:bg-slate-800 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700'
+              : 'bg-white dark:bg-neutral-800 text-neutral-500 dark:text-neutral-400 hover:bg-neutral-50 dark:hover:bg-neutral-700'
           ]}
         >
           {page}
@@ -100,7 +100,7 @@ const sortedTags = Object.entries(tags)
       {currentPage < lastPage && (
         <a
           href={`/blog/${currentPage + 1}`}
-          class="px-3 py-2 rounded-r-md border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700"
+          class="px-3 py-2 rounded-r-md border border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-800 text-neutral-500 dark:text-neutral-400 hover:bg-neutral-50 dark:hover:bg-neutral-700"
         >
           Next
         </a>

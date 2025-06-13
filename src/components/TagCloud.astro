@@ -52,10 +52,10 @@ const topTags = tags.slice(0, 12);
   {topTags.map(tag => (
     <a 
       href={`/tags/${tag.name.toLowerCase().replace(/\s+/g, '-')}`}
-      class="text-sm px-3 py-1 bg-sky-100 dark:bg-sky-800 hover:bg-sky-200 dark:hover:bg-slate-700 rounded-full transition-colors"
+      class="text-sm px-3 py-1 bg-sky-100 dark:bg-sky-800 hover:bg-sky-200 dark:hover:bg-neutral-700 rounded-full transition-colors"
     >
       {tag.name}
-      <span class="ml-1 text-slate-500 dark:text-slate-400 text-xs">({tag.count})</span>
+      <span class="ml-1 text-neutral-500 dark:text-neutral-400 text-xs">({tag.count})</span>
     </a>
   ))}
 </div>

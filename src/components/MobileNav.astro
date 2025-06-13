@@ -29,7 +29,7 @@ const siteConfig = getSiteConfig();
 const socialConfig = getSocialConfig();
 ---
 
-<div class="fixed inset-x-0 top-0 z-50 lg:hidden bg-white dark:bg-sky-900 border-b border-sky-200 dark:border-slate-800">
+<div class="fixed inset-x-0 top-0 z-50 lg:hidden bg-white dark:bg-sky-900 border-b border-sky-200 dark:border-neutral-800">
   <div class="flex items-center justify-between h-16 px-4">
     <a href="/" class="flex items-center gap-2 text-xl font-bold">
       <Icon name="book" class="w-6 h-6 text-cyan-600 dark:text-cyan-400" />
@@ -41,7 +41,7 @@ const socialConfig = getSocialConfig();
       
       <button 
         id="mobile-menu-button" 
-        class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800"
+        class="p-2 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800"
         aria-label="Toggle menu"
         data-menu-open="false"
       >
@@ -51,40 +51,40 @@ const socialConfig = getSocialConfig();
     </div>
   </div>
   
-  <div id="mobile-menu-panel" class="hidden p-4 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
+  <div id="mobile-menu-panel" class="hidden p-4 border-t border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900">
     <nav class="space-y-4">
-      <a href="/" class="block p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">Home</a>
-      <a href="/blog" class="block p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">Blog</a>
-      <a href="/projects" class="block p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">Projects</a>
-      <a href="/about" class="block p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">About</a>
+      <a href="/" class="block p-2 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg">Home</a>
+      <a href="/blog" class="block p-2 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg">Blog</a>
+      <a href="/projects" class="block p-2 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg">Projects</a>
+      <a href="/about" class="block p-2 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg">About</a>
       
       {sortedCategories.length > 0 && (
-      <div class="pt-4 border-t border-slate-200 dark:border-slate-800">
-        <p class="text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400 font-semibold mb-2">Categories</p>
+      <div class="pt-4 border-t border-neutral-200 dark:border-neutral-800">
+        <p class="text-xs uppercase tracking-wider text-neutral-500 dark:text-neutral-400 font-semibold mb-2">Categories</p>
         <div class="space-y-1">
             {sortedCategories.map(({ name, count }) => (
               <a 
                 href={`/categories/${name.toLowerCase().replace(/\s+/g, '-')}`} 
-                class="flex justify-between items-center p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg"
+                class="flex justify-between items-center p-2 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg"
               >
                 <span>{name}</span>
-                <span class="text-xs bg-slate-200 dark:bg-slate-700 rounded-full px-2 py-0.5 text-slate-600 dark:text-slate-300">{count}</span>
+                <span class="text-xs bg-neutral-200 dark:bg-neutral-700 rounded-full px-2 py-0.5 text-neutral-600 dark:text-neutral-300">{count}</span>
               </a>
             ))}
           </div>
         </div>
       )}
       
-      <div class="pt-4 border-t border-slate-200 dark:border-slate-800">
-        <p class="text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400 font-semibold mb-2">Connect</p>
+      <div class="pt-4 border-t border-neutral-200 dark:border-neutral-800">
+        <p class="text-xs uppercase tracking-wider text-neutral-500 dark:text-neutral-400 font-semibold mb-2">Connect</p>
         <div class="flex space-x-3 items-center">
-          <a href={socialConfig.github} class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800" aria-label="GitHub">
+          <a href={socialConfig.github} class="p-2 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800" aria-label="GitHub">
             <Icon name="github" class="w-5 h-5" />
           </a>
-          <a href={socialConfig.linkedin} class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800" aria-label="LinkedIn">
+          <a href={socialConfig.linkedin} class="p-2 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800" aria-label="LinkedIn">
             <Icon name="linkedin" class="w-5 h-5" />
           </a>
-          <a href="/api/rss.xml" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800" aria-label="RSS">
+          <a href="/api/rss.xml" class="p-2 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800" aria-label="RSS">
             <Icon name="rss" class="w-5 h-5" />
           </a>
         </div>

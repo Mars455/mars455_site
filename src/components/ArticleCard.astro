@@ -13,7 +13,7 @@ const formattedDate = pubDate.toLocaleDateString('en-us', {
 const hasUpdated = updatedDate && updatedDate > pubDate;
 ---
 
-<article class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col h-full">
+<article class="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col h-full">
   {heroImage && (
     <a href={`/blog/${slug}`} class="block">
       {typeof heroImage === 'string' ? (

@@ -99,7 +99,7 @@ const totalItems = sortedPosts.length + sortedProjects.length;
       <h2 class="text-2xl font-bold mb-6">Projects</h2>
       <div class="grid gap-6 md:grid-cols-2">
         {sortedProjects.map(project => (
-          <div class="bg-white dark:bg-sky-800 border border-slate-200 dark:border-slate-700 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+          <div class="bg-white dark:bg-sky-800 border border-neutral-200 dark:border-neutral-700 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
             {project.data.heroImage && (
               <img 
                 src={project.data.heroImage}
@@ -115,7 +115,7 @@ const totalItems = sortedPosts.length + sortedProjects.length;
                   {project.data.title}
                 </a>
               </h3>
-              <p class="text-slate-600 dark:text-slate-300 mb-4">
+              <p class="text-neutral-600 dark:text-neutral-300 mb-4">
                 {project.data.description}
               </p>
               
@@ -123,7 +123,7 @@ const totalItems = sortedPosts.length + sortedProjects.length;
                 {project.data.tags.map(t => (
                   <a 
                     href={`/tags/${t.toLowerCase().replace(/\s+/g, '-')}`}
-                    class="text-xs px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded-full hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors"
+                    class="text-xs px-2 py-1 bg-neutral-100 dark:bg-neutral-700 rounded-full hover:bg-neutral-200 dark:hover:bg-neutral-600 transition-colors"
                   >
                     {t}
                   </a>
@@ -138,7 +138,7 @@ const totalItems = sortedPosts.length + sortedProjects.length;
 
   {totalItems === 0 && (
     <div class="text-center py-12">
-      <p class="text-xl text-slate-600 dark:text-slate-300">No items found with this tag.</p>
+      <p class="text-xl text-neutral-600 dark:text-neutral-300">No items found with this tag.</p>
     </div>
   )}
 </ThreeColumnLayout> 

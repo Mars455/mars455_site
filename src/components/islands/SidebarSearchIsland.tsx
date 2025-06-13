@@ -33,7 +33,7 @@ function SidebarSearchIsland({ placeholder = "Search..." }: SidebarSearchIslandP
     <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
       <svg 
         xmlns="http://www.w3.org/2000/svg" 
-        className="h-5 w-5 text-slate-400" 
+        className="h-5 w-5 text-neutral-400" 
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -60,7 +60,7 @@ function SidebarSearchIsland({ placeholder = "Search..." }: SidebarSearchIslandP
         type="search" 
         id="sidebar-search" 
         name="q"
-        className="block w-full p-2 pl-10 text-sm border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-800 focus:ring-cyan-500 focus:border-cyan-500"
+        className="block w-full p-2 pl-10 text-sm border border-neutral-200 dark:border-neutral-700 rounded-lg bg-white dark:bg-neutral-800 focus:ring-cyan-500 focus:border-cyan-500"
         placeholder={placeholder}
         value={searchQuery}
         onChange={handleInputChange}

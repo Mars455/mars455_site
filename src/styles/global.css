@@ -50,12 +50,12 @@
   }
 
   .nav-link.active {
-    @apply bg-slate-100 dark:bg-sky-800 text-sky-600 dark:text-sky-400;
+    @apply bg-cyan-100 dark:bg-sky-800 text-sky-600 dark:text-sky-400;
   }
 
   /* Card styles */
   .card {
-    @apply bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow;
+    @apply bg-white dark:bg-sky-800 border border-sky-200 dark:border-sky-700 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow;
   }
 
   /* Typography */
@@ -72,7 +72,7 @@
 
   /* Links */
   a {
-    @apply text-indigo-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-300 transition-colors;
+    @apply text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-300 transition-colors;
   }
 
   /* Tags */
@@ -86,16 +86,16 @@
   }
 
   .btn-primary {
-    @apply bg-indigo-600 hover:bg-sky-700 text-white;
+    @apply bg-cyan-600 hover:bg-sky-700 text-white;
   }
 
   .btn-secondary {
-    @apply bg-slate-100 dark:bg-sky-800 hover:bg-sky-200 dark:hover:bg-sky-700 text-sky-900 dark:text-white;
+    @apply bg-cyan-100 dark:bg-sky-800 hover:bg-sky-200 dark:hover:bg-sky-700 text-sky-900 dark:text-white;
   }
 
   /* Form elements */
   input, select, textarea {
-    @apply block w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-sky-600 bg-white dark:bg-sky-800 text-sky-900 dark:text-white focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-colors;
+    @apply block w-full px-3 py-2 rounded-lg border border-sky-300 dark:border-sky-600 bg-white dark:bg-sky-800 text-sky-900 dark:text-white focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-colors;
   }
 
   /* Prose content */

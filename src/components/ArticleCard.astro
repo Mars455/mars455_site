@@ -44,14 +44,14 @@ const hasUpdated = updatedDate && updatedDate > pubDate;
   <div class="p-5 flex flex-col flex-grow">
     <!-- Title area -->
     <div class="mb-3">
-      <h2 class="text-base font-bold text-slate-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors line-clamp-2">
+      <h2 class="text-base font-bold text-sky-900 dark:text-white hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors line-clamp-2">
         <a href={`/blog/${slug}`}>{title}</a>
       </h2>
     </div>
     
     <!-- Description area -->
     <div class="mb-4 flex-grow">
-      <p class="text-slate-600 dark:text-slate-300 text-sm line-clamp-4">
+      <p class="text-sky-600 dark:text-sky-300 text-sm line-clamp-4">
         {description}
       </p>
     </div>
@@ -62,13 +62,13 @@ const hasUpdated = updatedDate && updatedDate > pubDate;
         {tags && tags.length > 0 && tags.slice(0, 3).map(tag => (
           <a
             href={`/tags/${tag.toLowerCase().replace(/\s+/g, '-')}`}
-            class="text-xs px-2 py-0.5 bg-slate-100 dark:bg-slate-700 rounded-full hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors"
+            class="text-xs px-2 py-0.5 bg-sky-100 dark:bg-sky-700 rounded-full hover:bg-sky-200 dark:hover:bg-sky-600 transition-colors"
           >
             {tag}
           </a>
         ))}
         {tags && tags.length > 3 && 
-          <span class="text-xs px-2 py-0.5 bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 rounded-full">
+          <span class="text-xs px-2 py-0.5 bg-sky-50 dark:bg-sky-800 text-sky-500 dark:text-sky-400 rounded-full">
             +{tags.length - 3}
           </span>
         }
@@ -76,12 +76,12 @@ const hasUpdated = updatedDate && updatedDate > pubDate;
     </div>
     
     <!-- Author and date area -->
-    <div class="mt-auto pt-2 border-t border-slate-100 dark:border-slate-700">
+    <div class="mt-auto pt-2 border-t border-sky-100 dark:border-sky-700">
       <div class="flex items-center justify-between">
-        <span class="text-xs text-slate-500 dark:text-slate-400 truncate max-w-[50%]">
+        <span class="text-xs text-cyan-500 dark:text-cyan-400 truncate max-w-[50%]">
           By {author || 'Anonymous'}
         </span>
-        <time datetime={pubDate.toISOString()} class="text-xs text-slate-500 dark:text-slate-400">
+        <time datetime={pubDate.toISOString()} class="text-xs text-sky-500 dark:text-sky-400">
           {formattedDate}
         </time>
       </div>

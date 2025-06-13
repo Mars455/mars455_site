@@ -56,13 +56,13 @@ const sortedSubjects = Object.entries(postsBySubject)
 ---
 
 <ThreeColumnLayout title={`${displayCategory} | Categories | Modern Blog`}>
-  <header class="pb-5 border-b border-slate-200 dark:border-slate-800 mb-6">
+  <header class="pb-5 border-b border-sky-200 dark:border-sky-800 mb-6">
     <h1 class="text-4xl font-bold mb-2">{displayCategory}</h1>
-    <p class="text-lg text-slate-600 dark:text-slate-300">
+    <p class="text-lg text-sky-600 dark:text-sky-300">
       Showing {sortedPosts.length} post{sortedPosts.length !== 1 ? 's' : ''} in the "{displayCategory}" category
     </p>
     <div class="mt-2">
-      <a href="/categories" class="text-indigo-600 dark:text-indigo-400 hover:underline flex items-center">
+      <a href="/categories" class="text-cyan-600 dark:text-cyan-400 hover:underline flex items-center">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
         </svg>
@@ -73,13 +73,13 @@ const sortedSubjects = Object.entries(postsBySubject)
 
   {sortedPosts.length === 0 ? (
     <div class="text-center py-8">
-      <p class="text-xl text-slate-600 dark:text-slate-300">No posts found in this category.</p>
+      <p class="text-xl text-sky-600 dark:text-sky-300">No posts found in this category.</p>
     </div>
   ) : (
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       {sortedSubjects.map(({ name, posts }) => (
         <div class="mb-6">
-          <h2 class="text-xl font-bold mb-3 text-slate-800 dark:text-slate-200 border-b border-slate-200 dark:border-slate-700 pb-2">{name}</h2>
+          <h2 class="text-xl font-bold mb-3 text-sky-800 dark:text-slate-200 border-b border-slate-200 dark:border-slate-700 pb-2">{name}</h2>
           <ul class="space-y-2">
             {posts.slice(0, 10).map(post => (
               <li class="flex items-baseline">
@@ -88,7 +88,7 @@ const sortedSubjects = Object.entries(postsBySubject)
                 </span>
                 <a 
                   href={`/blog/${post.slug}`}
-                  class="hover:text-indigo-600 dark:hover:text-indigo-400 line-clamp-1 ml-2"
+                  class="hover:text-cyan-600 dark:hover:text-cyan-400 line-clamp-1 ml-2"
                   title={post.data.title}
                 >
                   {post.data.title}
@@ -99,7 +99,7 @@ const sortedSubjects = Object.entries(postsBySubject)
               <li class="mt-2">
                 <a 
                   href={`/categories/${category.toLowerCase().replace(/\s+/g, '-')}/${name.toLowerCase().replace(/\s+/g, '-')}`} 
-                  class="text-xs text-indigo-600 dark:text-indigo-400 hover:underline"
+                  class="text-xs text-cyan-600 dark:text-cyan-400 hover:underline"
                 >
                   View all {posts.length} posts →
                 </a>

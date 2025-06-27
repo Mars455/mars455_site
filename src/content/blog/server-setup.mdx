@@ -1,6 +1,6 @@
 ---
 title: "My Server Setup"
-description: "This article describes how I am setting up my home server"
+description: "This article describes how I am setting up my home server, and serves as a tutorial if you want to follow what I did"
 pubDate: 2025-06-19
 heroImage: "https://cdn.freewebstore.com/origin/811762/18_1719184162016.webp"
 tags: ["server", "hardware", "proxmox", "ubuntu", "homeAssistant"]
@@ -36,3 +36,25 @@ OS: PVE / Ubuntu + HomeAssistantOS
 
 ## Setup
 
+First things first, I install proxmox using [their OS](https://www.proxmox.com/en/downloads) which I flashed onto a USB using [Balena Etcher](https://etcher.balena.io/).
+I then plugged this into my server and started the installation
+
+#### Little problem I had
+Unfortunately the drive I wanted to install PVE on was an NVME drive, but my server only supports SATA M.2 Drives.
+You can see the drive you are installing on through the first interactive screens of the pve setup.
+Be careful and make sure you check the specs of the motherboard you are using supports the drive you want to install :D
+For mine, I had to purchase a PCIe adapter which let me use my drive. (I say purchase but I had my [amazing sister](https://macdoughnutdraws.carrd.co/) pick it up free from amazon for me)
+
+The base setup of PVE(Proxmox Virtual Enivoronment) is very similar to any other operating system.
+If you have completed Windows preset it should be similar.
+One thing I would recommend is to make sure your ethernet is plugged in and active, as it will then autofill the IP Address, default gateway etc...
+Make sure the IP Address is available first (although it should choose a free one anyway).
+It might also be worth choosing your own. Quite often, your router will only send out addresses between a certain range, i.e. 192.168.1.50 to 192.168.1.200. This leaves you with a decent chunk of addresses you can statically assign with no issues.
+For example, I set mine to be 253 so it is easy to remember and next to the routers own address which is 254. Make sure you check this though! It is normally in the advanced section for home routers. Make a note of this address as you will need it to manage everything.
+
+Once you have completed the setup, I recommend viewing [this webpage](https://community-scripts.github.io/ProxmoxVE/scripts) There are a bunch of scripts, including a [post install script](https://community-scripts.github.io/ProxmoxVE/scripts?id=post-pve-install). I recommend running this so you make sure you are licenced and get access to new features.
+Of course, please consider [buying a licence](https://www.proxmox.com/en/products/proxmox-virtual-environment/pricing)
+
+The community scripts page also has scripts to install other VMs, which is where I installed Ubuntu and Home Assistant from.
+
+## Ubuntu

@@ -13,7 +13,7 @@
     "@astrojs/mdx": "^3.0.0",
     "@astrojs/react": "^3.0.0",
     "@astrojs/rss": "^4.0.11",
-    "@astrojs/sitemap": "^3.0.0",
+    "@astrojs/sitemap": "^3.4.1",
     "@astrojs/tailwind": "^5.0.0",
     "@motionone/dom": "^10.16.2",
     "astro": "^4.0.0",

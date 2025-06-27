@@ -45,6 +45,8 @@ You can see the drive you are installing on through the first interactive screen
 Be careful and make sure you check the specs of the motherboard you are using supports the drive you want to install :D
 For mine, I had to purchase a PCIe adapter which let me use my drive. (I say purchase but I had my [amazing sister](https://macdoughnutdraws.carrd.co/) pick it up free from amazon for me)
 
+### Settings & Post Setup
+
 The base setup of PVE(Proxmox Virtual Enivoronment) is very similar to any other operating system.
 If you have completed Windows preset it should be similar.
 One thing I would recommend is to make sure your ethernet is plugged in and active, as it will then autofill the IP Address, default gateway etc...
@@ -53,8 +55,52 @@ It might also be worth choosing your own. Quite often, your router will only sen
 For example, I set mine to be 253 so it is easy to remember and next to the routers own address which is 254. Make sure you check this though! It is normally in the advanced section for home routers. Make a note of this address as you will need it to manage everything.
 
 Once you have completed the setup, I recommend viewing [this webpage](https://community-scripts.github.io/ProxmoxVE/scripts) There are a bunch of scripts, including a [post install script](https://community-scripts.github.io/ProxmoxVE/scripts?id=post-pve-install). I recommend running this so you make sure you are licenced and get access to new features.
-Of course, please consider [buying a licence](https://www.proxmox.com/en/products/proxmox-virtual-environment/pricing)
+Of course, please consider [buying a licence.](https://www.proxmox.com/en/products/proxmox-virtual-environment/pricing)
 
 The community scripts page also has scripts to install other VMs, which is where I installed Ubuntu and Home Assistant from.
 
 ## Ubuntu
+Make sure to install the Ubuntu LXC, as this will be the one you need.
+When you run the script, it will give you the option for basic or advanced setup.
+I recommend choosing advanced, as it will give you the option to choose the specs you want to assign to it.
+By default, as it says on the script page, it will be 1 vCPU, 512MB RAM and 2GB of storage space, which is **nowhere near enough** if you want to use Ubuntu for your server needs.
+I used 5 vCPUs, 30GB (of my 32GB) RAM, and  64GB of the drive (which can be expanded to my needs later on). Choose an appropriate IP Address also.
+
+Once ubuntu was up, I installed docker, and on top of that, portainer.
+I fully recommend portainer if you want to use docker, as it provides an *amazing* Web UI to manage full stacks and individual containers.
+While I could give an in depth tutorial, there are better resources out there, including the [official documentation](https://docs.portainer.io/start/install/server/docker/linux) - so please read this for help!
+
+From Portainer, available at https://[ubuntuip]:9443, you can add stacks.
+You can add *anything* here. Just search for [service you want to host] docker compose on Google.
+I have my minecraft server (crafty controller), cloudflare dynamic dns (so my services will always be available through my domain), uptime-kuma, traefik as a proxy, and a homepage so I dont have to remember all the addresses and ports.
+
+### Recommendation
+One other thing I recommend is 'Watchtower' this will auto-update all your containers. Have a quick google for this!
+
+## Home Assistant
+For me, home assistant is a must have.
+It allows you to manage *all sorts* of devices that you have at home.
+If you have any smart tech, it's worth a look!
+I was using Google Home previously, but decided to switch to HA just because of how useful it is.
+
+### Setup
+Home Assistant's setup is  pretty straight forward. It has very useful instructions which you can view at https://homeassistant.local:8123.
+You can create a home, designate rooms and add other users.
+
+Once you are set up, it will offer Home Assistant cloud through nabu casa. I recommend this as it gives easy access to your instance while supporting the developers, and giving you 5gb of cloud backup.
+
+### Integrations
+<img src="/src/Screenshot 2025-06-27 144313.png" alt="HA Integrations">
+Here is a list of all the integrations I am using.
+One major plus side of Home Assistant, is that there are many integrations you can download from the community. This means if a device isn't officially supported by Home Assistant, it may still be maintained by the community.
+There is an amazing tool called [HACS](https://www.hacs.xyz/) please view their page and download it - trust me it is worth it!
+
+### Automations
+You can create automatons using the UI, which is useful if you haven't done much programming before. Here is an example:
+<img src="/src/Screenshot 2025-06-27 145042.png" al="HA Automation Page">
+There are a tonne of options so you can always do what you want to.
+
+## Conclusion
+
+All in all, a server actually isn't that difficult to manage! You can add a media server if you want to dump your DVDs, add other game servers you want to host, host your own websites and more.
+If you ever have a spare old PC lying around, I recommend it!

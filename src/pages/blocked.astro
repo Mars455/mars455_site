@@ -1,0 +1,44 @@
+---
+import ThreeColumnLayout from '@layouts/ThreeColumnLayout.astro';
+import { getSiteConfig } from '@utils/config';
+
+const siteConfig = getSiteConfig();
+---
+
+<ThreeColumnLayout title={`Blocked | ${siteConfig.title}`} description="You do not have permission to view this webpage">
+  <div class="flex flex-col items-center justify-center py-16 px-4 text-center">
+    <div class="text-2xl mb-4">Blocked</div>
+    
+    <h1 class="text-4xl font-bold mb-6">You do not have permission to view this webpage.</h1>
+    
+    <p class="text-lg text-sky-600 dark:text-sky-300 mb-10">
+      If you are expecting to be able to view this page, please contact me on discord @Mars455.
+    </p>
+    <p>
+      ![Blocked](https://i.pinimg.com/736x/c1/3e/23/c13e23fbaac874fd563c7f055f6552a6.jpg)
+    </p>
+    
+    <div class="w-full max-w-md space-y-4">
+      <a 
+        href="/" 
+        class="block w-full bg-sky-800 hover:bg-sky-600 text-white py-3 rounded-lg text-center transition-colors"
+      >
+        Return to Homepage
+      </a>
+      
+      <a 
+        href="/blog" 
+        class="block w-full bg-neutral-800 hover:bg-neutral-700 text-white py-3 rounded-lg text-center transition-colors border border-neutral-700"
+      >
+        Browse Blog
+      </a>
+      
+      <a 
+        href="/categories" 
+        class="block w-full bg-neutral-800 hover:bg-neutral-700 text-white py-3 rounded-lg text-center transition-colors border border-neutral-700"
+      >
+        Explore Categories
+      </a>
+    </div>
+  </div>
+</ThreeColumnLayout> 
